@@ -43,3 +43,7 @@ main {
 .product-info {
   margin: 1rem;
 }
+
+.img-large {
+  max-width: 100%;
+}
