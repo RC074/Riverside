@@ -16,7 +16,7 @@ const data = {
       name: "ECHEVERIA PERLE VON NURNBERG",
       slug: "ECHEVERIA-PERLE-VON-NURNBERG",
       category: "succulent",
-      image: "/images/1/.webp",
+      image: "/images/1.webp",
       price: 5.75,
       inStockCount: 10,
       rating: 4.5,
