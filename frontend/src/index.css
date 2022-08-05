@@ -21,7 +21,7 @@ main {
 }
 
 .rating span {
-  color: rgb(156, 216, 156);
+  color: #fff;
 }
 
 .products {
@@ -31,19 +31,32 @@ main {
 }
 
 .product {
-  border: 1px #404040 solid;
-  margin: 1rem;
+  text-align: center;
+  margin: 0.5vw;
 }
 
 .product img {
-  width: 100%;
+  margin: 5%;
+  width: 90%;
   max-width: 400px;
 }
 
-.product-info {
-  margin: 1rem;
+.product-title {
+  height: 2.4em;
+  line-height: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(85, 85, 85);
 }
 
 .img-large {
   max-width: 100%;
+}
+
+.img-thumbnail {
+  height: 80px;
+}
+
+.small-container {
+  max-width: 600px;
 }
