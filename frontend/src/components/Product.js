@@ -43,7 +43,7 @@ const Product = (props) => {
         <ListGroup.Item style={{ backgroundColor: "rgb(156, 216, 156)" }}>
           <Rating rating={product.rating} reviewsCount={product.reviewsCount} />
         </ListGroup.Item>
-        <ListGroup.Item>
+        <ListGroup.Item style={{ backgroundColor: "rgb(156, 216, 156)" }}>
           <Card.Text>
             <strong style={{ color: "rgb(85, 85, 85)" }}>
               ${product.price}
@@ -58,7 +58,8 @@ const Product = (props) => {
           </Button>
         ) : (
           <Button
-            className="shadow p-3 rounded border-0"
+            type="reset"
+            className="btn-p shadow p-3 rounded border-0"
             onClick={() => addToCartHandler(product)}
           >
             Add to cart

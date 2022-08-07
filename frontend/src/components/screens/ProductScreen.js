@@ -91,10 +91,12 @@ const ProductScreen = () => {
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
+                green={true}
                 rating={product.rating}
                 reviewsCount={product.reviewsCount}
-              ></Rating>
+              />
             </ListGroup.Item>
+
             <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
             <ListGroup.Item>
               Description:
@@ -128,7 +130,12 @@ const ProductScreen = () => {
                 {product.inStockCount > 0 && (
                   <ListGroup.Item>
                     <div className="d-grid">
-                      <Button onClick={addToCartHandler} variant="primary">
+                      <Button
+                        className="btn-p"
+                        style={{ marginTop: "1rem" }}
+                        onClick={addToCartHandler}
+                        variant="primary"
+                      >
                         Add to Cart
                       </Button>
                     </div>

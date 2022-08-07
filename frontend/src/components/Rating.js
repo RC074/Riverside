@@ -1,8 +1,8 @@
 const Rating = (props) => {
-  const { rating, reviewsCount } = props;
+  const { rating, reviewsCount, green } = props;
   return (
     <div className="rating">
-      <span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
         <i
           className={
             rating >= 1
@@ -13,7 +13,7 @@ const Rating = (props) => {
           }
         />
       </span>
-      <span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
         <i
           className={
             rating >= 2
@@ -24,7 +24,7 @@ const Rating = (props) => {
           }
         />
       </span>
-      <span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
         <i
           className={
             rating >= 3
@@ -35,7 +35,7 @@ const Rating = (props) => {
           }
         />
       </span>
-      <span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
         <i
           className={
             rating >= 4
@@ -46,7 +46,7 @@ const Rating = (props) => {
           }
         />
       </span>
-      <span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
         <i
           className={
             rating >= 5
@@ -58,7 +58,9 @@ const Rating = (props) => {
         />
       </span>
       <br></br>
-      <span>{reviewsCount} reviews</span>
+      <span style={green ? { color: "rgb(156, 216, 156)" } : {}}>
+        {reviewsCount} reviews
+      </span>
     </div>
   );
 };
