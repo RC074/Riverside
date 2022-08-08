@@ -50,7 +50,7 @@ export default function OrderHistoryScreen() {
     fetchData();
   }, [userInfo]);
   return (
-    <div>
+    <div style={{ color: "#fff" }}>
       <Helmet>
         <title>Order History</title>
       </Helmet>
@@ -74,7 +74,7 @@ export default function OrderHistoryScreen() {
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr key={order._id}>
+              <tr style={{ color: "#fff" }} key={order._id}>
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>

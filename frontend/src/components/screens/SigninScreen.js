@@ -42,7 +42,7 @@ const SigninScreen = () => {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <div>
+    <div style={{ color: "#e6e0e0" }}>
       <CheckoutSteps step1 />
       <Container className="small-container">
         <Helmet>
@@ -67,7 +67,9 @@ const SigninScreen = () => {
             />
           </Form.Group>
           <div className="mb-3">
-            <Button type="submit">Sign In</Button>
+            <Button className="btn-p border-0" type="submit">
+              Sign In
+            </Button>
           </div>
           <div className="mb-3">
             New customer?{" "}

@@ -30,7 +30,11 @@ const Product = (props) => {
   };
 
   return (
-    <Card className="product">
+    <Card
+      className={
+        product.inStockCount === 0 ? "product-inactive" : "product-active"
+      }
+    >
       <Link to={`/product/${product.slug}`}>
         <Card.Img variant="top" src={product.image} alt={product.name} />
       </Link>

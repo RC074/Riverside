@@ -46,7 +46,8 @@ main {
   justify-content: center;
 }
 
-.product {
+.product-active,
+.product-inactive {
   text-align: center;
   margin: 0.5vw;
   margin-top: 2rem;
@@ -55,11 +56,12 @@ main {
   transition: all 0.2s ease;
 }
 
-.product:hover {
+.product-active:hover {
   transform: scale(1.03);
 }
 
-.product img {
+.product-active img,
+.product-inactive img {
   margin: 5%;
   width: 90%;
   max-width: 400px;
@@ -88,9 +90,9 @@ main {
 
 .checkout-steps > div {
   border-bottom: 0.2rem solid #a0a0a0;
-  color: #a0a0a0;
+  color: #e6e0e0;
 }
 .checkout-steps > div.active {
-  border-bottom: 0.2rem solid #f08000;
-  color: #f08000;
+  border-bottom: 0.2rem solid rgb(156, 216, 156);
+  color: rgb(156, 216, 156);
 }
