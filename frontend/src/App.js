@@ -20,6 +20,7 @@ import PlaceOrderScreen from "./components/screens/PlaceOrderScreen";
 import OrderScreen from "./components/screens/OrderScreen";
 import OrderHistoryScreen from "./components/screens/OrderHistoryScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
+import { Parallax } from "react-scroll-parallax";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -97,10 +98,8 @@ function App() {
               <Route path="/profile" element={<ProfileScreen />} />
             </Routes>
           </Container>
+          <div style={{ paddingTop: "3rem" }}></div>
         </main>
-        <footer>
-          <div className="text-center">All rights reserved</div>
-        </footer>
       </div>
     </BrowserRouter>
   );

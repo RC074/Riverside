@@ -8,6 +8,7 @@ import Product from "../Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../LoadingBox";
 import MessageBox from "../MessageBox";
+import { Parallax } from "react-scroll-parallax";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,27 +43,30 @@ const HomeScreen = () => {
     fetchData();
   }, []);
   return (
-    <div>
-      <Helmet>
-        <title>Riverside</title>
-      </Helmet>
-      <h1>Featured Products</h1>
-      <div className="products">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row>
-            {products.map((product, index) => (
-              <Col key={index} sm={6} md={4} lg={3}>
-                <Product product={product} />
-              </Col>
-            ))}
-          </Row>
-        )}
+    <Parallax speed={50} startScroll={-500} endScroll={500} easeInOut>
+      <div>
+        <Helmet>
+          <title>Riverside</title>
+        </Helmet>
+        <h1>Featured Products</h1>
+
+        <div className="products">
+          {loading ? (
+            <LoadingBox />
+          ) : error ? (
+            <MessageBox variant="danger">{error}</MessageBox>
+          ) : (
+            <Row>
+              {products.map((product, index) => (
+                <Col key={index} sm={12} md={6} lg={4}>
+                  <Product product={product} />
+                </Col>
+              ))}
+            </Row>
+          )}
+        </div>
       </div>
-    </div>
+    </Parallax>
   );
 };
 

@@ -73,15 +73,15 @@ const ProductScreen = () => {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <Row>
-        <Col md={6}>
+      <Row style={{ justifyContent: "center", alignItems: "center" }}>
+        <Col lg={6} sm={12} style={{ margin: "2rem" }}>
           <img
             className="img-large"
             src={product.image}
             alt={product.name}
           ></img>
         </Col>
-        <Col md={3}>
+        <Col lg={3} sm={12}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
@@ -103,8 +103,6 @@ const ProductScreen = () => {
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
-        </Col>
-        <Col md={3}>
           <Card>
             <Card.Body>
               <ListGroup variant="flush">

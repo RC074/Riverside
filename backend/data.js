@@ -21,7 +21,7 @@ const data = {
       name: "Echeveria Perle von Nurnberg",
       slug: "ECHEVERIA-PERLE-VON-NURNBERG",
       category: "succulent",
-      image: "/images/1.webp",
+      image: "/images/1.png",
       price: 5.75,
       inStockCount: 10,
       rating: 4.5,
@@ -53,6 +53,32 @@ const data = {
       reviewsCount: 20,
       description:
         "Sedum Burrito/ Sedum Morganianum, also known as Burro's Tail or Donkey's Tail Succulent, is native to Mexico.",
+    },
+    {
+      // _id: "3",
+      name: "Echeveria Violet Queen",
+      slug: "ECHEVERIA-VIOLET-QUEEN",
+      category: "succulent",
+      image: "/images/4.webp",
+      price: 6.75,
+      inStockCount: 0,
+      rating: 3.5,
+      reviewsCount: 40,
+      description:
+        "Echeveria Violet Queen is a charming Echeveria with tips that turn violet-pink in cold weather. The leaves are light grayish green, long, narrow, and curve slightly upward towards the tips similar to that of a lotus blossom.",
+    },
+    {
+      // _id: "3",
+      name: "Echeveria Raindrops Succulent",
+      slug: "ECHEVERIA-RAINDROPS-SUCCULENT",
+      category: "succulent",
+      image: "/images/5.webp",
+      price: 6.75,
+      inStockCount: 10,
+      rating: 4.5,
+      reviewsCount: 20,
+      description:
+        "Echeveria Raindrops is an unusual succulent that has little globular bumps near the tips of its light green leaves. The bumps and tips of the leaves can turn pink or red in cold weather and bright light.",
     },
   ],
 };

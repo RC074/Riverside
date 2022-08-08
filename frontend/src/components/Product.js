@@ -39,11 +39,18 @@ const Product = (props) => {
           <Card.Title className="product-title">{product.name}</Card.Title>
         </Link>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item style={{ backgroundColor: "rgb(156, 216, 156)" }}>
+      <ListGroup
+        style={{ backgroundColor: "rgb(156, 216, 156)", border: "0px" }}
+        className="list-group-flush"
+      >
+        <ListGroup.Item
+          style={{ backgroundColor: "rgb(156, 216, 156)", border: "0px" }}
+        >
           <Rating rating={product.rating} reviewsCount={product.reviewsCount} />
         </ListGroup.Item>
-        <ListGroup.Item style={{ backgroundColor: "rgb(156, 216, 156)" }}>
+        <ListGroup.Item
+          style={{ backgroundColor: "rgb(156, 216, 156)", border: "0px" }}
+        >
           <Card.Text>
             <strong style={{ color: "rgb(85, 85, 85)" }}>
               ${product.price}
@@ -51,8 +58,10 @@ const Product = (props) => {
           </Card.Text>
         </ListGroup.Item>
       </ListGroup>
-      <Card.Body style={{ backgroundColor: "rgb(156, 216, 156)" }}>
-        {product.InStockCount === 0 ? (
+      <Card.Body
+        style={{ backgroundColor: "rgb(156, 216, 156)", border: "0px" }}
+      >
+        {product.inStockCount === 0 ? (
           <Button variant="light" disabled>
             Out of stock
           </Button>
