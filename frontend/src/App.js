@@ -25,7 +25,6 @@ import { Parallax } from "react-scroll-parallax";
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
-
   const signoutHandler = () => {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
@@ -39,7 +38,15 @@ function App() {
       <div className="d-flex flex-column site-container">
         <ToastContainer position="bottom-center" limit={1} />
         <header className="App-header">
-          <Navbar className="sticky-top" bg="dark" variant="dark" expand="lg">
+          <Navbar
+            className="navbar shadow-sm"
+            fixed="top"
+            style={{
+              backgroundColor: "rgb(156, 216, 156)",
+            }}
+            variant="light"
+            expand="lg"
+          >
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand>Riverside</Navbar.Brand>

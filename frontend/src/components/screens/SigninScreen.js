@@ -66,12 +66,15 @@ const SigninScreen = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <div className="mb-3">
+          <div style={{ float: "left", width: "30%" }} className="mb-3 mt-3">
             <Button className="btn-p border-0" type="submit">
               Sign In
             </Button>
           </div>
-          <div className="mb-3">
+          <div
+            style={{ float: "right", textAlign: "right", width: "60%" }}
+            className="mb-3 mt-2"
+          >
             New customer?{" "}
             <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
           </div>

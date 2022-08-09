@@ -50,7 +50,7 @@ export default function ShippingAddressScreen() {
     navigate("/payment");
   };
   return (
-    <div>
+    <div style={{ color: "#e6e0e0" }}>
       <Helmet>
         <title>Shipping Address</title>
       </Helmet>

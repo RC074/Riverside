@@ -43,7 +43,7 @@ const HomeScreen = () => {
     fetchData();
   }, []);
   return (
-    <Parallax speed={50} startScroll={-500} endScroll={500} easeInOut>
+    <Parallax speed={30} startScroll={-500} endScroll={500} easeInOut>
       <div>
         <Helmet>
           <title>Riverside</title>

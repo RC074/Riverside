@@ -83,13 +83,15 @@ const ProductScreen = () => {
         </Col>
         <Col lg={3} sm={12}>
           <ListGroup variant="flush">
-            <ListGroup.Item>
+            <ListGroup.Item
+              style={{ color: "#fff", background: "rgba(3, 72, 47, 0.2)" }}
+            >
               <Helmet>
                 <title>{product.name}</title>
               </Helmet>
               <h1>{product.name}</h1>
             </ListGroup.Item>
-            <ListGroup.Item>
+            <ListGroup.Item style={{ background: "rgba(3, 72, 47, 0.2)" }}>
               <Rating
                 green={true}
                 rating={product.rating}
@@ -97,22 +99,38 @@ const ProductScreen = () => {
               />
             </ListGroup.Item>
 
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
-            <ListGroup.Item>
-              Description:
+            <ListGroup.Item
+              style={{ color: "#fff", background: "rgba(3, 72, 47, 0.2)" }}
+            >
+              <strong>Price:</strong> ${product.price}
+            </ListGroup.Item>
+            <ListGroup.Item
+              style={{ color: "#fff", background: "rgba(3, 72, 47, 0.2)" }}
+            >
+              <strong>Description:</strong>
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
-          <Card>
+          <Card
+            style={{
+              color: "#fff",
+              background: "rgba(3, 72, 47, 0.2)",
+              borderRadius: "0",
+            }}
+          >
             <Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item>
+                <ListGroup.Item
+                  style={{ color: "#fff", background: "transparent" }}
+                >
                   <Row>
                     <Col>Price:</Col>
                     <Col>${product.price}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item
+                  style={{ color: "#fff", background: "transparent" }}
+                >
                   <Row>
                     <Col>Status:</Col>
                     <Col>
@@ -126,7 +144,12 @@ const ProductScreen = () => {
                 </ListGroup.Item>
 
                 {product.inStockCount > 0 && (
-                  <ListGroup.Item>
+                  <ListGroup.Item
+                    style={{
+                      color: "#fff",
+                      background: "transparent",
+                    }}
+                  >
                     <div className="d-grid">
                       <Button
                         className="btn-p"

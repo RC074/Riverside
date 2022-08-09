@@ -72,7 +72,7 @@ const Product = (props) => {
         ) : (
           <Button
             type="reset"
-            className="btn-p shadow p-3 rounded border-0"
+            className="btn-p shadow-lg p-3 rounded border-0"
             onClick={() => addToCartHandler(product)}
           >
             Add to cart

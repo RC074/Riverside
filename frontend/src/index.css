@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -13,12 +11,18 @@ body {
 
 main {
   flex: 1;
-  background: url(./bg.svg) no-repeat center;
+  background: url(./bg2.svg) no-repeat center;
   background-size: cover;
+  margin-top: 56px;
+  transition: all 2s ease;
+}
+
+.navbar {
+  font-family: "Oleo Script Swash Caps", cursive;
 }
 
 .btn-p {
-  background-color: rgb(156, 216, 156);
+  background-color: rgb(100, 171, 100);
   color: black;
 }
 
@@ -44,6 +48,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: "Oleo Script Swash Caps", cursive;
 }
 
 .product-active,
@@ -54,6 +59,11 @@ main {
   border: 4px solid black;
   box-shadow: 14px 14px 0 -4px pink, 14px 14px 0 0 black;
   transition: all 0.2s ease;
+  background-color: rgba(3, 72, 47, 0.2);
+}
+
+.product-inactive {
+  opacity: 0.5;
 }
 
 .product-active:hover {
@@ -68,7 +78,7 @@ main {
 }
 
 .product-title {
-  height: 2.4em;
+  height: 1.2em;
   line-height: 1.2em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -85,6 +95,7 @@ main {
 }
 
 .small-container {
+  margin-top: 10vh;
   max-width: 600px;
 }
 
