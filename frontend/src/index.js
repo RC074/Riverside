@@ -7,6 +7,7 @@ import App from "./App";
 import { StoreProvider } from "./Store";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,9 @@ root.render(
       <HelmetProvider>
         <PayPalScriptProvider deferLoading={true}>
           <ParallaxProvider>
-            <App />
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
           </ParallaxProvider>
         </PayPalScriptProvider>
       </HelmetProvider>

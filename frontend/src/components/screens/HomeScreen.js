@@ -43,12 +43,12 @@ const HomeScreen = () => {
     fetchData();
   }, []);
   return (
-    <Parallax speed={30} startScroll={-500} endScroll={500} easeInOut>
-      <div>
-        <Helmet>
-          <title>Riverside</title>
-        </Helmet>
+    <div>
+      <Helmet>
+        <title>Riverside</title>
+      </Helmet>
 
+      <Parallax speed={100} startScroll={-800} endScroll={1600}>
         <div className="products">
           {loading ? (
             <LoadingBox />
@@ -64,8 +64,8 @@ const HomeScreen = () => {
             </Row>
           )}
         </div>
-      </div>
-    </Parallax>
+      </Parallax>
+    </div>
   );
 };
 
