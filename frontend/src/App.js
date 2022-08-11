@@ -37,7 +37,7 @@ function App() {
 
   const progressChangeHandler = (progress) => {
     console.log(progress);
-    if (progress >= 0.8 && icon === "sun") {
+    if (progress > 0.9 && icon === "sun") {
       setIcon("moon");
       setNight(true);
     }
@@ -48,7 +48,7 @@ function App() {
     if (progress >= 0.5 && icon === "sun" && night) {
       setNight(false);
     }
-    if (progress <= 0.5 && !night) {
+    if (progress < 0.5 && !night) {
       setNight(true);
     }
   };
