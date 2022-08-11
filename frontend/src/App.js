@@ -27,29 +27,46 @@ import OrderScreen from "./components/screens/OrderScreen";
 import OrderHistoryScreen from "./components/screens/OrderHistoryScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import { Parallax } from "react-scroll-parallax";
+import Button from "react-bootstrap/esm/Button";
 
 function App() {
   const location = useLocation();
+  const [stopAutoChange, setStopAutoChange] = useState(false);
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const [night, setNight] = useState(false);
   const { cart, userInfo } = state;
   const [icon, setIcon] = useState("sun");
 
   const progressChangeHandler = (progress) => {
-    console.log(progress);
-    if (progress > 0.9 && icon === "sun") {
+    if (!stopAutoChange) {
+      if (progress > 0.9 && icon === "sun") {
+        setIcon("moon");
+        setNight(true);
+      }
+      if (progress <= 0.9 && icon === "moon") {
+        setIcon("sun");
+        setNight(false);
+      }
+      if (progress >= 0.5 && icon === "sun" && night) {
+        setNight(false);
+      }
+      if (progress < 0.5 && !night) {
+        setNight(true);
+      }
+    }
+  };
+
+  const switchIconHandler = () => {
+    setStopAutoChange(true);
+
+    if (icon === "sun" && night) {
       setIcon("moon");
-      setNight(true);
-    }
-    if (progress <= 0.9 && icon === "moon") {
+    } else if (icon === "sun") {
+      setIcon("moon");
+      setNight(!night);
+    } else {
       setIcon("sun");
-      setNight(false);
-    }
-    if (progress >= 0.5 && icon === "sun" && night) {
-      setNight(false);
-    }
-    if (progress < 0.5 && !night) {
-      setNight(true);
+      setNight(!night);
     }
   };
 
@@ -81,9 +98,19 @@ function App() {
             <LinkContainer to="/">
               <Navbar.Brand>Riverside</Navbar.Brand>
             </LinkContainer>
+            <Nav>
+              <div
+                style={{ fontSize: "30px", animation: "none" }}
+                onClick={() => switchIconHandler()}
+                className={
+                  icon === "sun" ? "fa-solid fa-sun" : "fa-solid fa-moon"
+                }
+              ></div>
+            </Nav>
+
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto  w-100  justify-content-end">
+            <Navbar.Collapse style={{ flexGrow: "0" }} id="basic-navbar-nav">
+              <Nav className="">
                 <Link to="/cart" className="nav-link">
                   Cart
                   {cart.cartItems.length > 0 && (
@@ -124,10 +151,10 @@ function App() {
           <div className="icon-container">
             <Parallax
               onProgressChange={(num) => progressChangeHandler(num)}
-              rotate={[0, 220]}
-              speed={-175}
-              startScroll={-1000}
-              endScroll={1200}
+              // rotate={[0, 220]}
+              speed={-310}
+              startScroll={-1600}
+              endScroll={2600}
             >
               <div
                 className={

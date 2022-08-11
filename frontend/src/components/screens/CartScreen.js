@@ -41,7 +41,6 @@ export default function CartScreen() {
       <Helmet>
         <title>Shopping Cart</title>
       </Helmet>
-      <h1>Shopping Cart</h1>
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
@@ -51,7 +50,10 @@ export default function CartScreen() {
           ) : (
             <ListGroup>
               {cartItems.map((item) => (
-                <ListGroup.Item key={item._id}>
+                <ListGroup.Item
+                  style={{ color: "#fff", background: "rgba(3, 72, 47, 0.2)" }}
+                  key={item._id}
+                >
                   <Row className="align-items-center">
                     <Col md={4}>
                       <img
@@ -66,17 +68,25 @@ export default function CartScreen() {
                         onClick={() =>
                           updateCartHandler(item, item.quantity - 1)
                         }
-                        variant="light"
+                        style={{
+                          color: "#fff",
+                          background: "transparent",
+                          border: "none",
+                        }}
                         disabled={item.quantity === 1}
                       >
                         <i className="fas fa-minus-circle"></i>
                       </Button>
-                      <span>{item.quantity}</span>{" "}
+                      <span className="m-3">{item.quantity}</span>{" "}
                       <Button
                         onClick={() =>
                           updateCartHandler(item, item.quantity + 1)
                         }
-                        variant="light"
+                        style={{
+                          color: "#fff",
+                          background: "transparent",
+                          border: "none",
+                        }}
                         disabled={item.quantity === item.inStockCount}
                       >
                         <i className="fas fa-plus-circle"></i>
@@ -86,7 +96,11 @@ export default function CartScreen() {
                     <Col md={2}>
                       <Button
                         onClick={() => removeItemHandler(item)}
-                        variant="light"
+                        style={{
+                          color: "#fff",
+                          background: "transparent",
+                          border: "none",
+                        }}
                       >
                         <i className="fas fa-trash"></i>
                       </Button>
@@ -98,19 +112,24 @@ export default function CartScreen() {
           )}
         </Col>
         <Col md={4}>
-          <Card>
+          <Card style={{ color: "#fff", background: "rgba(3, 72, 47, 0.2)" }}>
             <Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item>
+                <ListGroup.Item
+                  style={{ color: "#fff", background: "transparent" }}
+                >
                   <h3>
                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{" "}
                     items) : $
                     {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                   </h3>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  <div className="d-grid">
+                <ListGroup.Item
+                  style={{ color: "#fff", background: "transparent" }}
+                >
+                  <div className="d-grid mt-2">
                     <Button
+                      className="btn-p"
                       onClick={checkoutHandler}
                       type="button"
                       variant="primary"

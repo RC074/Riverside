@@ -8,12 +8,12 @@ body {
 
 .site-container {
   min-height: 100vh;
-  transition: all 2s ease;
+  transition: all 1.5s ease-in-out;
   background-color: rgb(208, 237, 232);
 }
 
 .topBg {
-  background: url(./bot.svg) no-repeat center;
+  background: url(./svg/bot.svg) no-repeat center;
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -25,9 +25,9 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 800;
   text-decoration: underline;
-  text-decoration-thickness: 0.5rem;
+  text-decoration-thickness: 1rem;
   text-decoration-color: white;
-  text-underline-offset: 30px;
+  text-underline-offset: 50px;
 }
 
 .icon-container {
@@ -40,18 +40,31 @@ body {
   z-index: -1;
   font-size: 12rem;
   width: fit-content;
+  cursor: pointer;
 }
 
 .fa-sun {
   color: rgb(243, 182, 0);
   filter: drop-shadow(0px 0px 50px rgb(232, 191, 28));
   transition: all 1s ease;
+  animation: rotation 20s infinite linear;
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 .fa-moon {
   color: rgb(214, 214, 181);
   filter: drop-shadow(5px 0px 60px rgba(221, 214, 172, 0.9));
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 .bg2 {
@@ -59,17 +72,17 @@ body {
   top: 0;
   width: 100%;
   height: 100vh;
-  background: url(./top.svg) no-repeat center;
+  background: url(./svg/top.svg) no-repeat center;
   background-size: cover;
   z-index: 2;
 }
 
 main {
   flex: 1;
-  background: url(./bg.svg) no-repeat center;
-  background-size: cover;
+  background: url(./svg/bg.svg) no-repeat center;
+  background-position: bottom;
+  background-size: 100vw;
   margin-top: 56px;
-  transition: all 2s ease;
 }
 
 .navbar {
