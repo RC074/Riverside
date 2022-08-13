@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 
 export default function ProfileScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
+  const { userInfo, mode } = state;
   const [name, setName] = useState(userInfo.name);
   const [email, setEmail] = useState(userInfo.email);
   const [password, setPassword] = useState("");
@@ -38,6 +38,9 @@ export default function ProfileScreen() {
     try {
       if (confirmPassword !== password) {
         throw new Error("passwords do not match");
+      }
+      if (password.length < 3) {
+        throw new Error("password length must be at least 3 characters");
       }
       const { data } = await axios.put(
         "/api/users/profile",
@@ -65,7 +68,10 @@ export default function ProfileScreen() {
   };
 
   return (
-    <div className="container small-container">
+    <div
+      className="container small-container"
+      style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}
+    >
       <Helmet>
         <title>User Profile</title>
       </Helmet>
@@ -102,8 +108,10 @@ export default function ProfileScreen() {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </Form.Group>
-        <div className="mb-3">
-          <Button type="submit">Update</Button>
+        <div>
+          <Button className="btn-p mt-2" type="submit">
+            Update
+          </Button>
         </div>
       </form>
     </div>

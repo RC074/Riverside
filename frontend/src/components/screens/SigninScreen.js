@@ -19,7 +19,8 @@ const SigninScreen = () => {
   const [password, setPassword] = useState("");
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { userInfo } = state;
+  const { userInfo, mode } = state;
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -42,7 +43,7 @@ const SigninScreen = () => {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <div style={{ color: "#e6e0e0" }}>
+    <div style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}>
       <CheckoutSteps step1 />
       <Container className="small-container">
         <Helmet>

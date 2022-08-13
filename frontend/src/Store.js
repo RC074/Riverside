@@ -3,6 +3,10 @@ import { createContext, useReducer } from "react";
 export const Store = createContext();
 
 const initialState = {
+  // mode: localStorage.getItem("mode")
+  //   ? JSON.parse(localStorage.getItem("mode"))
+  //   : 0,
+  mode: 0,
   cart: {
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
@@ -21,6 +25,10 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "CHANGE_MODE":
+      localStorage.setItem("mode", JSON.stringify(action.payload));
+      console.log(action.payload);
+      return { ...state, mode: action.payload };
     case "CART_ADD_ITEM":
       const newItem = action.payload;
       const existItem = state.cart.cartItems.find(

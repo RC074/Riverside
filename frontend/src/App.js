@@ -33,7 +33,7 @@ function App() {
   const location = useLocation();
   const [stopAutoChange, setStopAutoChange] = useState(false);
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const [night, setNight] = useState(false);
+  const [night, setNight] = useState(true);
   const { cart, userInfo } = state;
   const [icon, setIcon] = useState("sun");
 
@@ -42,16 +42,20 @@ function App() {
       if (progress > 0.9 && icon === "sun") {
         setIcon("moon");
         setNight(true);
+        ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
       }
       if (progress <= 0.9 && icon === "moon") {
         setIcon("sun");
         setNight(false);
+        ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
       }
       if (progress >= 0.5 && icon === "sun" && night) {
         setNight(false);
+        ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
       }
       if (progress < 0.5 && !night) {
         setNight(true);
+        ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
       }
     }
   };
@@ -64,9 +68,11 @@ function App() {
     } else if (icon === "sun") {
       setIcon("moon");
       setNight(!night);
+      ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
     } else {
       setIcon("sun");
       setNight(!night);
+      ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
     }
   };
 
@@ -83,7 +89,7 @@ function App() {
       className="d-flex flex-column site-container"
       style={night ? { backgroundColor: "#001220" } : {}}
     >
-      <ToastContainer position="bottom-center" limit={1} />
+      <ToastContainer position="bottom-center" limit={2} />
       <header className="App-header">
         <Navbar
           className="navbar shadow-sm"
