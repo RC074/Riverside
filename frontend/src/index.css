@@ -79,9 +79,7 @@ body {
 
 main {
   flex: 1;
-  background: url(./svg/bg.svg) no-repeat center;
-  background-position: bottom;
-  background-size: 100vw;
+
   margin-top: 56px;
 }
 

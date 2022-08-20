@@ -27,7 +27,6 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "CHANGE_MODE":
       localStorage.setItem("mode", JSON.stringify(action.payload));
-      console.log(action.payload);
       return { ...state, mode: action.payload };
     case "CART_ADD_ITEM":
       const newItem = action.payload;

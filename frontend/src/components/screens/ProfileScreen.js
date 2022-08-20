@@ -35,6 +35,7 @@ export default function ProfileScreen() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    toast.dismiss();
     try {
       if (confirmPassword !== password) {
         throw new Error("passwords do not match");

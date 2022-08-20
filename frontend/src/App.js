@@ -27,7 +27,7 @@ import OrderScreen from "./components/screens/OrderScreen";
 import OrderHistoryScreen from "./components/screens/OrderHistoryScreen";
 import ProfileScreen from "./components/screens/ProfileScreen";
 import { Parallax } from "react-scroll-parallax";
-import Button from "react-bootstrap/esm/Button";
+import bg from "./svg/bg.svg";
 
 function App() {
   const location = useLocation();
@@ -89,7 +89,6 @@ function App() {
       className="d-flex flex-column site-container"
       style={night ? { backgroundColor: "#001220" } : {}}
     >
-      <ToastContainer position="bottom-center" limit={2} />
       <header className="App-header">
         <Navbar
           className="navbar shadow-sm"
@@ -158,7 +157,7 @@ function App() {
             <Parallax
               onProgressChange={(num) => progressChangeHandler(num)}
               // rotate={[0, 220]}
-              speed={-310}
+              translateY={["-250vh", "320vh"]}
               startScroll={-1600}
               endScroll={2600}
             >
@@ -181,7 +180,17 @@ function App() {
         ""
       )}
 
-      <main>
+      <main
+        style={
+          location.pathname === "/"
+            ? {
+                background: `url(${bg}) no-repeat center`,
+                backgroundPosition: "bottom",
+                backgroundSize: "100vw",
+              }
+            : {}
+        }
+      >
         <Container className="mt-3">
           <Routes>
             <Route path="/" element={<HomeScreen />} />
@@ -199,6 +208,7 @@ function App() {
         </Container>
         <div style={{ height: "100px" }}></div>
       </main>
+      <ToastContainer position="bottom-center" limit={0} />
     </div>
   );
 }
