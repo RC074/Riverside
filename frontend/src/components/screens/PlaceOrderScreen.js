@@ -86,8 +86,7 @@ export default function PlaceOrderScreen() {
       <Helmet>
         <title>Preview Order</title>
       </Helmet>
-      <h1 className="my-3">Preview Order</h1>
-      <Row>
+      <Row className="mt-4">
         <Col md={8}>
           <Card className="mb-3">
             <Card.Body>

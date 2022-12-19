@@ -10,6 +10,7 @@ export default function PaymentMethodScreen() {
   const navigate = useNavigate();
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
+    mode,
     cart: { shippingAddress, paymentMethod },
   } = state;
 
@@ -29,7 +30,7 @@ export default function PaymentMethodScreen() {
     navigate("/placeorder");
   };
   return (
-    <div>
+    <div style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <div className="container small-container">
         <Helmet>

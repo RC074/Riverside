@@ -47,11 +47,11 @@ function App() {
       if (progress <= 0.9 && icon === "moon") {
         setIcon("sun");
         setNight(false);
-        ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
+        ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
       }
       if (progress >= 0.5 && icon === "sun" && night) {
         setNight(false);
-        ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
+        ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
       }
       if (progress < 0.5 && !night) {
         setNight(true);
@@ -87,7 +87,9 @@ function App() {
   return (
     <div
       className="d-flex flex-column site-container"
-      style={night ? { backgroundColor: "#001220" } : {}}
+      style={
+        night ? { backgroundColor: "#001220" } : { backgroundColor: "#001220" }
+      }
     >
       <header className="App-header">
         <Navbar
@@ -157,7 +159,8 @@ function App() {
             <Parallax
               onProgressChange={(num) => progressChangeHandler(num)}
               // rotate={[0, 220]}
-              translateY={["-250vh", "320vh"]}
+              translateY={["-250vh", "300vh"]}
+              // speed={5}
               startScroll={-1600}
               endScroll={2600}
             >

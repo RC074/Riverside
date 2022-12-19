@@ -11,6 +11,7 @@ export default function ShippingAddressScreen() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     userInfo,
+    mode,
     cart: { shippingAddress },
   } = state;
   const [fullName, setFullName] = useState(shippingAddress.fullName || "");
@@ -50,7 +51,7 @@ export default function ShippingAddressScreen() {
     navigate("/payment");
   };
   return (
-    <div style={{ color: "#e6e0e0" }}>
+    <div style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}>
       <Helmet>
         <title>Shipping Address</title>
       </Helmet>

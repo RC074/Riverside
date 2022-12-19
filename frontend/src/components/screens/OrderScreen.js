@@ -37,7 +37,7 @@ function reducer(state, action) {
 }
 export default function OrderScreen() {
   const { state } = useContext(Store);
-  const { userInfo } = state;
+  const { userInfo, mode } = state;
 
   const params = useParams();
   const { id: orderId } = params;
@@ -138,7 +138,12 @@ export default function OrderScreen() {
       <Helmet>
         <title>Order {orderId}</title>
       </Helmet>
-      <h1 className="my-3">Order {orderId}</h1>
+      <h1
+        style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}
+        className="my-3"
+      >
+        Order {orderId}
+      </h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">

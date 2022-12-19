@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 
 export default function OrderHistoryScreen() {
   const { state } = useContext(Store);
-  const { userInfo } = state;
+  const { userInfo, mode } = state;
   const navigate = useNavigate();
 
   const [{ loading, error, orders }, dispatch] = useReducer(reducer, {
@@ -50,18 +50,23 @@ export default function OrderHistoryScreen() {
     fetchData();
   }, [userInfo]);
   return (
-    <div style={{ color: "#fff" }}>
+    <div>
       <Helmet>
         <title>Order History</title>
       </Helmet>
 
-      <h1>Order History</h1>
+      <h1 style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}>
+        Order History
+      </h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
+        <table
+          style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}
+          className="table"
+        >
           <thead>
             <tr>
               <th>ID</th>
@@ -74,7 +79,10 @@ export default function OrderHistoryScreen() {
           </thead>
           <tbody>
             {orders.map((order) => (
-              <tr style={{ color: "#fff" }} key={order._id}>
+              <tr
+                style={mode === 0 ? { color: "#e6e0e0" } : { color: "#000" }}
+                key={order._id}
+              >
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
