@@ -72,7 +72,7 @@ function App() {
     } else {
       setIcon("sun");
       setNight(!night);
-      ctxDispatch({ type: "CHANGE_MODE", payload: 1 });
+      ctxDispatch({ type: "CHANGE_MODE", payload: 0 });
     }
   };
 
