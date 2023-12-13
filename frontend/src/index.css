@@ -4,12 +4,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: #D6D6B5;
+
 }
 
 .site-container {
   min-height: 100vh;
-  transition: all 1.5s ease-in-out;
-  background-color: rgb(208, 237, 232);
+  transition: all 0.5s ease-in-out;
+  background-color: #a1d1da;
 }
 
 .topBg {

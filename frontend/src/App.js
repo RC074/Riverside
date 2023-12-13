@@ -34,6 +34,7 @@ function App() {
   const [stopAutoChange, setStopAutoChange] = useState(false);
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const [night, setNight] = useState(true);
+  const [mode, setMode] = useState(0);
   const { cart, userInfo } = state;
   const [icon, setIcon] = useState("sun");
 
@@ -63,6 +64,8 @@ function App() {
   const switchIconHandler = () => {
     setStopAutoChange(true);
 
+    setMode(mode ? 0 : 1);
+
     if (icon === "sun" && night) {
       setIcon("moon");
     } else if (icon === "sun") {
@@ -88,7 +91,7 @@ function App() {
     <div
       className="d-flex flex-column site-container"
       style={
-        night ? { backgroundColor: "#001220" } : { backgroundColor: "#001220" }
+        mode ? { backgroundColor: "#001220" } : { backgroundColor: "#001220" }
       }
     >
       <header className="App-header">
