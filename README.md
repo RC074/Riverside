@@ -2,7 +2,7 @@
 
 ### deployed at:
 
-### https://riverside-app-02.herokuapp.com/
+### [https://riverside-t16c.onrender.com]
 
 ## Fullstack ecommerce website built using MERN
 
